@@ -11,26 +11,12 @@
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
 
-<!-- Open Graph Meta Tags for Social Sharing -->
-<meta property="og:title" content="EEGAI Jobs - Tamil Nadu Employment Portal">
-<meta property="og:description" content="Find your dream job in Tamil Nadu. Connect with top employers.">
-<meta property="og:image" content="https://yourdomain.com/og-image.jpg">
-<meta property="og:url" content="https://yourdomain.com">
-<meta property="og:type" content="website">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="EEGAI Jobs - Tamil Nadu Employment Portal">
-<meta name="twitter:description" content="Find your dream job in Tamil Nadu">
-<meta name="twitter:image" content="https://yourdomain.com/og-image.jpg">
-
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- External Libraries -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <style>
 :root{
@@ -58,53 +44,6 @@ body{
   color:var(--text);
   min-height:100vh;
   line-height:1.6;
-}
-
-/* Loading Spinner */
-.spinner-overlay{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.5);
-  backdrop-filter:blur(4px);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-}
-.spinner-overlay.show{
-  display:flex;
-}
-.spinner{
-  width:60px;
-  height:60px;
-  border:4px solid rgba(255,255,255,0.3);
-  border-top-color:#fff;
-  border-radius:50%;
-  animation:spin 0.8s linear infinite;
-}
-@keyframes spin{
-  to{transform:rotate(360deg)}
-}
-.spinner-text{
-  color:#fff;
-  margin-top:20px;
-  font-weight:600;
-  font-size:1.1rem;
-}
-
-/* Inline Spinner for Buttons */
-.btn-spinner{
-  display:inline-block;
-  width:16px;
-  height:16px;
-  border:2px solid rgba(255,255,255,0.3);
-  border-top-color:#fff;
-  border-radius:50%;
-  animation:spin 0.6s linear infinite;
-  margin-right:8px;
 }
 
 /* Header */
@@ -233,132 +172,6 @@ input:focus,select:focus,textarea:focus{
   backdrop-filter:blur(10px);
 }
 
-/* Pagination */
-.pagination{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:8px;
-  margin:24px 0;
-  flex-wrap:wrap;
-}
-.pagination button{
-  min-width:40px;
-  padding:8px 12px;
-  font-size:0.875rem;
-}
-.pagination button.active{
-  background:var(--primary-dark);
-  transform:scale(1.1);
-}
-.pagination .page-info{
-  color:var(--muted);
-  font-size:0.875rem;
-  margin:0 12px;
-}
-
-/* Draft Badge */
-.draft-badge{
-  background:#fef3c7;
-  color:#92400e;
-  padding:4px 12px;
-  border-radius:20px;
-  font-size:0.75rem;
-  font-weight:600;
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-}
-
-/* Social Share Buttons */
-.social-share{
-  display:flex;
-  gap:12px;
-  margin:20px 0;
-  flex-wrap:wrap;
-}
-.social-share button{
-  flex:1;
-  min-width:120px;
-}
-.share-facebook{background:#1877f2}
-.share-twitter{background:#1da1f2}
-.share-linkedin{background:#0a66c2}
-.share-telegram{background:#0088cc}
-.share-copy{background:var(--muted)}
-
-/* Job Cards */
-.job-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(350px,1fr));
-  gap:20px;
-}
-.job-card{
-  background:var(--card);
-  border-radius:16px;
-  padding:24px;
-  border:1px solid var(--border);
-  transition:all 0.3s ease;
-  position:relative;
-}
-.job-card:hover{
-  transform:translateY(-4px);
-  box-shadow:var(--shadow-lg);
-  border-color:var(--primary);
-}
-.job-card .company{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom:16px;
-}
-.job-card h4{
-  font-size:1.125rem;
-  margin-bottom:8px;
-  color:var(--text);
-}
-.job-card .meta{
-  display:flex;
-  gap:16px;
-  color:var(--muted);
-  font-size:0.875rem;
-  margin-bottom:16px;
-  flex-wrap:wrap;
-}
-.job-card .tags{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin-bottom:16px;
-}
-.tag{
-  background:#f1f5f9;
-  padding:4px 12px;
-  border-radius:20px;
-  font-size:0.75rem;
-  color:var(--muted);
-}
-
-/* Avatar */
-.avatar{
-  width:64px;
-  height:64px;
-  border-radius:50%;
-  background:linear-gradient(135deg,var(--primary),var(--secondary));
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  font-size:28px;
-  font-weight:600;
-  box-shadow:0 4px 12px rgba(79,70,229,0.3);
-}
-.avatar-small{
-  width:40px;
-  height:40px;
-  font-size:18px;
-}
-
 /* Login */
 .login-card{
   max-width:440px;
@@ -398,6 +211,187 @@ input:focus,select:focus,textarea:focus{
   border-color:var(--primary);
   background:var(--primary);
   color:#fff;
+}
+
+/* Auth Toggle */
+.auth-toggle{
+  margin-top:20px;
+  padding-top:20px;
+  border-top:1px solid var(--border);
+}
+.auth-toggle p{
+  color:var(--muted);
+  margin-bottom:12px;
+}
+
+/* Dashboard */
+.dashboard{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+  margin-bottom:24px;
+}
+.stat-card{
+  background:linear-gradient(135deg,#fff 0%,#f8fafc 100%);
+  border-radius:16px;
+  padding:24px;
+  border:1px solid var(--border);
+  transition:transform 0.3s ease;
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+}
+.stat-card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:4px;
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+}
+.stat-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-lg);
+}
+.stat-card h3{
+  font-size:0.875rem;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  margin-bottom:8px;
+}
+.stat-card .value{
+  font-size:2.5rem;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:4px;
+}
+.stat-card .change{
+  font-size:0.875rem;
+  color:var(--success);
+  font-weight:500;
+}
+
+/* Avatar & Profile */
+.avatar{
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:28px;
+  font-weight:600;
+  box-shadow:0 4px 12px rgba(79,70,229,0.3);
+}
+.avatar-small{
+  width:40px;
+  height:40px;
+  font-size:18px;
+}
+.profile-header{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  margin-bottom:24px;
+}
+
+/* Tables */
+.table-container{
+  overflow-x:auto;
+  border-radius:12px;
+  border:1px solid var(--border);
+  margin-top:16px;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:var(--card);
+}
+th,td{
+  padding:16px;
+  text-align:left;
+  border-bottom:1px solid var(--border);
+}
+th{
+  background:#f8fafc;
+  font-weight:600;
+  font-size:0.875rem;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+}
+tr:hover{
+  background:#f8fafc;
+}
+.badge{
+  display:inline-flex;
+  align-items:center;
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:0.75rem;
+  font-weight:600;
+  text-transform:uppercase;
+}
+.badge-success{background:#dcfce7;color:#166534}
+.badge-warning{background:#fef3c7;color:#92400e}
+.badge-danger{background:#fee2e2;color:#991b1b}
+.badge-info{background:#dbeafe;color:#1e40af}
+.badge-inactive{background:#f3f4f6;color:#374151}
+
+/* Job Cards */
+.job-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(350px,1fr));
+  gap:20px;
+}
+.job-card{
+  background:var(--card);
+  border-radius:16px;
+  padding:24px;
+  border:1px solid var(--border);
+  transition:all 0.3s ease;
+  cursor:pointer;
+}
+.job-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-lg);
+  border-color:var(--primary);
+}
+.job-card .company{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:16px;
+}
+.job-card h4{
+  font-size:1.125rem;
+  margin-bottom:8px;
+  color:var(--text);
+}
+.job-card .meta{
+  display:flex;
+  gap:16px;
+  color:var(--muted);
+  font-size:0.875rem;
+  margin-bottom:16px;
+  flex-wrap:wrap;
+}
+.job-card .tags{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:16px;
+}
+.tag{
+  background:#f1f5f9;
+  padding:4px 12px;
+  border-radius:20px;
+  font-size:0.75rem;
+  color:var(--muted);
 }
 
 /* Modal */
@@ -462,89 +456,6 @@ input:focus,select:focus,textarea:focus{
   color:var(--text);
 }
 
-/* Toast */
-.toast{
-  position:fixed;
-  bottom:24px;
-  right:24px;
-  background:var(--text);
-  color:#fff;
-  padding:16px 24px;
-  border-radius:12px;
-  box-shadow:var(--shadow-lg);
-  display:flex;
-  align-items:center;
-  gap:12px;
-  transform:translateX(400px);
-  transition:transform 0.3s ease;
-  z-index:1001;
-}
-.toast.show{
-  transform:translateX(0);
-}
-.toast.success{background:var(--success)}
-.toast.error{background:var(--danger)}
-
-/* Utilities */
-.hidden{display:none !important}
-.muted{color:var(--muted)}
-.success{color:var(--success)}
-.danger{color:var(--danger)}
-.flex{display:flex}
-.items-center{align-items:center}
-.justify-between{justify-content:space-between}
-.gap-2{gap:8px}
-.gap-4{gap:16px}
-.mb-4{margin-bottom:16px}
-.mt-4{margin-top:16px}
-.text-sm{font-size:0.875rem}
-.font-semibold{font-weight:600}
-.text-center{text-align:center}
-
-/* Dashboard */
-.dashboard{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
-  margin-bottom:24px;
-}
-.stat-card{
-  background:linear-gradient(135deg,#fff 0%,#f8fafc 100%);
-  border-radius:16px;
-  padding:24px;
-  border:1px solid var(--border);
-  transition:transform 0.3s ease;
-  position:relative;
-  overflow:hidden;
-  cursor:pointer;
-}
-.stat-card::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:4px;
-  background:linear-gradient(90deg,var(--primary),var(--secondary));
-}
-.stat-card:hover{
-  transform:translateY(-4px);
-  box-shadow:var(--shadow-lg);
-}
-.stat-card h3{
-  font-size:0.875rem;
-  color:var(--muted);
-  text-transform:uppercase;
-  letter-spacing:0.05em;
-  margin-bottom:8px;
-}
-.stat-card .value{
-  font-size:2.5rem;
-  font-weight:700;
-  color:var(--text);
-  margin-bottom:4px;
-}
-
 /* Tabs */
 .tabs{
   display:flex;
@@ -571,15 +482,156 @@ input:focus,select:focus,textarea:focus{
   border-bottom-color:var(--primary);
 }
 
-/* Responsive */
-@media(max-width:768px){
-  .dashboard{grid-template-columns:1fr}
-  .job-grid{grid-template-columns:1fr}
-  .pagination{gap:4px}
-  .pagination button{min-width:36px;padding:6px 10px}
-  .social-share{flex-direction:column}
-  .social-share button{min-width:100%}
+/* Skills Input */
+.skills-container{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:8px;
+  padding:8px;
+  border:2px solid var(--border);
+  border-radius:12px;
+  min-height:50px;
 }
+.skill-tag{
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:#fff;
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:0.875rem;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.skill-tag button{
+  background:none;
+  border:none;
+  color:#fff;
+  cursor:pointer;
+  padding:0;
+  font-size:1rem;
+  line-height:1;
+}
+
+/* Filters */
+.filter-bar{
+  display:flex;
+  gap:12px;
+  margin-bottom:24px;
+  flex-wrap:wrap;
+  align-items:end;
+}
+.filter-bar input, .filter-bar select{
+  margin:0;
+  flex:1;
+  min-width:200px;
+}
+
+/* Share Buttons */
+.share-btns{
+  display:flex;
+  gap:12px;
+  margin-top:16px;
+}
+.share-btn{
+  flex:1;
+  padding:12px;
+  border-radius:12px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  transition:all 0.3s;
+}
+.share-btn.whatsapp{background:#25d366;color:#fff}
+.share-btn.call{background:var(--success);color:#fff}
+.share-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* CSV Upload */
+.upload-area{
+  border:2px dashed var(--border);
+  border-radius:16px;
+  padding:40px;
+  text-align:center;
+  cursor:pointer;
+  transition:all 0.3s;
+}
+.upload-area:hover{
+  border-color:var(--primary);
+  background:#f8fafc;
+}
+.upload-area input{
+  display:none;
+}
+
+/* UPI Display */
+.upi-display{
+  background:linear-gradient(135deg,#f0fdf4,#dcfce7);
+  border:2px solid var(--success);
+  border-radius:16px;
+  padding:24px;
+  text-align:center;
+  margin:20px 0;
+}
+.upi-id{
+  font-size:1.5rem;
+  font-weight:700;
+  color:var(--success);
+  letter-spacing:1px;
+  margin:12px 0;
+}
+
+/* Poster Gallery */
+.poster-gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:16px;
+  margin:20px 0;
+}
+.poster-item{
+  position:relative;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.poster-item img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+}
+.poster-item .actions{
+  position:absolute;
+  top:8px;
+  right:8px;
+  display:flex;
+  gap:8px;
+}
+.poster-item .actions button{
+  padding:6px;
+  font-size:0.875rem;
+}
+
+/* Utilities */
+.hidden{display:none !important}
+.muted{color:var(--muted)}
+.success{color:var(--success)}
+.danger{color:var(--danger)}
+.flex{display:flex}
+.items-center{align-items:center}
+.justify-between{justify-content:space-between}
+.gap-2{gap:8px}
+.gap-4{gap:16px}
+.mb-4{margin-bottom:16px}
+.mt-4{margin-top:16px}
+.text-sm{font-size:0.875rem}
+.font-semibold{font-weight:600}
+.text-center{text-align:center}
 
 /* Animations */
 @keyframes slideIn{
@@ -590,73 +642,59 @@ input:focus,select:focus,textarea:focus{
   animation:slideIn 0.5s ease-out;
 }
 
-/* PWA Install Prompt */
-.pwa-prompt{
+/* Toast */
+.toast{
   position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
-  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  bottom:24px;
+  right:24px;
+  background:var(--text);
   color:#fff;
-  padding:20px;
-  display:none;
+  padding:16px 24px;
+  border-radius:12px;
+  box-shadow:var(--shadow-lg);
+  display:flex;
   align-items:center;
-  justify-content:space-between;
-  box-shadow:0 -4px 20px rgba(0,0,0,0.2);
-  z-index:999;
-}
-.pwa-prompt.show{
-  display:flex;
-}
-.pwa-prompt-content{
-  flex:1;
-}
-.pwa-prompt h4{
-  font-size:1.1rem;
-  margin-bottom:4px;
-}
-.pwa-prompt p{
-  font-size:0.875rem;
-  opacity:0.9;
-}
-.pwa-prompt-actions{
-  display:flex;
   gap:12px;
+  transform:translateX(400px);
+  transition:transform 0.3s ease;
+  z-index:1001;
 }
-.pwa-prompt button{
-  background:#fff;
+.toast.show{
+  transform:translateX(0);
+}
+.toast.success{background:var(--success)}
+.toast.error{background:var(--danger)}
+
+/* CSV Format Box */
+.csv-format-box{
+  background:#f8fafc;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:16px;
+  margin:16px 0;
+  font-family:monospace;
+  font-size:0.875rem;
+  overflow-x:auto;
+}
+.csv-format-box code{
   color:var(--primary);
-  padding:10px 20px;
+  font-weight:600;
 }
-.pwa-prompt .close-prompt{
-  background:transparent;
-  border:2px solid #fff;
-  color:#fff;
+
+/* Responsive */
+@media(max-width:768px){
+  .dashboard{grid-template-columns:1fr}
+  .job-grid{grid-template-columns:1fr}
+  .profile-header{flex-direction:column;text-align:center}
+  .tabs{overflow-x:auto}
+  .filter-bar{flex-direction:column}
+  .filter-bar input, .filter-bar select{width:100%}
+  .poster-gallery{grid-template-columns:repeat(2,1fr)}
 }
 </style>
 </head>
 
 <body>
-
-<!-- Loading Spinner Overlay -->
-<div id="loadingSpinner" class="spinner-overlay">
-  <div style="text-align:center">
-    <div class="spinner"></div>
-    <div class="spinner-text" id="spinnerText">Loading...</div>
-  </div>
-</div>
-
-<!-- PWA Install Prompt -->
-<div id="pwaPrompt" class="pwa-prompt">
-  <div class="pwa-prompt-content">
-    <h4>📱 Install EEGAI Jobs App</h4>
-    <p>Get instant access to jobs with our mobile app!</p>
-  </div>
-  <div class="pwa-prompt-actions">
-    <button onclick="installPWA()">Install</button>
-    <button class="close-prompt" onclick="closePWAPrompt()">Later</button>
-  </div>
-</div>
 
 <header>
   <div class="logo">EEGAI Jobs</div>
@@ -669,7 +707,7 @@ input:focus,select:focus,textarea:focus{
 
 <div class="container">
 
-<!-- LOGIN -->
+<!-- LOGIN VIEW -->
 <div id="loginView" class="card login-card animate-in">
   <h2>Welcome Back</h2>
   <p class="subtitle">Tamil Nadu's Premier Employment Portal</p>
@@ -680,67 +718,47 @@ input:focus,select:focus,textarea:focus{
     <div class="role-btn" onclick="selectRole('admin')">👑 Admin</div>
   </div>
 
-  <input id="loginUser" placeholder="Username / Email">
-  <input id="loginPass" type="password" placeholder="Password">
+  <input id="loginUser" placeholder="Username / Email" autocomplete="username">
+  <input id="loginPass" type="password" placeholder="Password" autocomplete="current-password">
   
   <button onclick="login()" style="width:100%;margin-top:16px">
     Sign In →
   </button>
 
-  <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--border)">
-    <p class="muted">Don't have an account?</p>
-    <button onclick="showRegister()" class="ghost" style="width:100%;margin-top:12px">Create Account</button>
+  <div class="auth-toggle">
+    <p class="muted">Demo Logins:</p>
+    <p class="text-sm">Employee: ravi@emp / 123</p>
+    <p class="text-sm">Employer: abc@employer / 123</p>
+    <p class="text-sm">Admin: admin@eegai / Admin@123</p>
   </div>
 </div>
 
-<!-- REGISTER (Same as before, keeping it simple) -->
-<div id="registerView" class="card login-card hidden animate-in">
-  <h2>Create Account</h2>
-  <p class="subtitle">Join Tamil Nadu's Premier Employment Portal</p>
-  <p class="muted text-sm">Registration form here...</p>
-  <button onclick="showLogin()" class="ghost" style="width:100%;margin-top:20px">Back to Login</button>
-</div>
-
-<!-- EMPLOYEE DASHBOARD -->
+<!-- EMPLOYEE VIEW -->
 <div id="employeeView" class="hidden animate-in">
   <div class="card">
-    <h2>Available Jobs</h2>
-    <p class="muted">Browse through latest job opportunities</p>
-    
-    <div style="margin:20px 0">
-      <input type="text" id="jobSearch" placeholder="🔍 Search jobs, companies, skills..." onkeyup="searchJobsWithPagination()">
+    <h2>Browse Jobs</h2>
+    <div class="filter-bar">
+      <input type="text" id="jobSearch" placeholder="Search jobs, companies..." onkeyup="searchJobs()">
     </div>
     
     <div class="job-grid" id="jobListings"></div>
-    
-    <!-- Pagination -->
-    <div class="pagination" id="jobPagination"></div>
   </div>
 </div>
 
-<!-- EMPLOYER DASHBOARD -->
+<!-- EMPLOYER VIEW -->
 <div id="employerView" class="hidden animate-in">
   <div class="card">
-    <div class="flex justify-between items-center mb-4">
-      <div>
-        <h2 id="employerName">My Company</h2>
-        <p class="muted">Manage your job postings</p>
-      </div>
-      <div style="display:flex;gap:12px">
-        <button onclick="loadDrafts()">📝 Drafts (<span id="draftCount">0</span>)</button>
-        <button onclick="openPostJobModal()">+ Post New Job</button>
-      </div>
-    </div>
-    
-    <div id="employerJobsList"></div>
+    <h2 id="employerName">My Company</h2>
+    <p class="muted mb-4">Manage your job postings</p>
+    <button onclick="openPostJobModal()">+ Post New Job</button>
+    <div id="employerJobsList" style="margin-top:24px"></div>
   </div>
 </div>
 
-<!-- ADMIN VIEW (Simplified) -->
+<!-- ADMIN VIEW -->
 <div id="adminView" class="hidden animate-in">
   <div class="card">
     <h2>Admin Dashboard</h2>
-    <p class="muted">System administration panel</p>
     <div class="dashboard">
       <div class="stat-card">
         <h3>Total Users</h3>
@@ -762,26 +780,6 @@ input:focus,select:focus,textarea:focus{
       <button class="close-btn" onclick="closeJobDetailsModal()">×</button>
     </div>
     <div id="jobDetailsContent"></div>
-    
-    <!-- Social Share Buttons -->
-    <div class="social-share">
-      <button class="share-facebook" onclick="shareOnSocial('facebook')">
-        📘 Share on Facebook
-      </button>
-      <button class="share-twitter" onclick="shareOnSocial('twitter')">
-        🐦 Share on Twitter
-      </button>
-      <button class="share-linkedin" onclick="shareOnSocial('linkedin')">
-        💼 Share on LinkedIn
-      </button>
-      <button class="share-telegram" onclick="shareOnSocial('telegram')">
-        ✈️ Share on Telegram
-      </button>
-      <button class="share-copy" onclick="copyJobLink()">
-        🔗 Copy Link
-      </button>
-    </div>
-    
     <button onclick="applyJob()" style="width:100%;margin-top:20px">
       Apply for this Job
     </button>
@@ -797,31 +795,15 @@ input:focus,select:focus,textarea:focus{
     </div>
     <form id="postJobForm" onsubmit="submitJob(event)">
       <input id="jobTitle" placeholder="Job Title *" required>
-      <input id="jobCompany" placeholder="Company Name *" required>
       <textarea id="jobDescription" rows="4" placeholder="Job Description *" required></textarea>
       <input id="jobLocation" placeholder="Location *" required>
       <input id="jobSalary" placeholder="Salary Range *" required>
-      
-      <div style="display:flex;gap:12px;margin-top:20px">
-        <button type="button" onclick="saveDraft()" class="ghost">💾 Save Draft</button>
-        <button type="submit" style="flex:1">Post Job</button>
-      </div>
+      <button type="submit" style="width:100%;margin-top:16px">Post Job</button>
     </form>
   </div>
 </div>
 
-<!-- DRAFTS MODAL -->
-<div id="draftsModal" class="modal-overlay" onclick="closeModal(event)">
-  <div class="modal" onclick="event.stopPropagation()">
-    <div class="modal-header">
-      <h3>Saved Drafts</h3>
-      <button class="close-btn" onclick="closeDraftsModal()">×</button>
-    </div>
-    <div id="draftsList"></div>
-  </div>
-</div>
-
-<!-- Toast Notification -->
+<!-- TOAST -->
 <div id="toast" class="toast">
   <span id="toastIcon">✓</span>
   <span id="toastMessage">Operation successful</span>
@@ -830,162 +812,95 @@ input:focus,select:focus,textarea:focus{
 </div>
 
 <script>
-/* ==================== DATA & CONFIG ==================== */
+// PWA Service Worker Registration
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+    .then(() => console.log('Service Worker registered'))
+    .catch(err => console.error('SW registration failed:', err));
+}
+
+// PWA Install Prompt
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  document.getElementById('installPWABtn').classList.add('show');
+});
+
+async function installPWA() {
+  if(!deferredPrompt) {
+    showToast('App is already installed or not available', 'error');
+    return;
+  }
+  deferredPrompt.prompt();
+  const { outcome } = await deferredPrompt.userChoice;
+  deferredPrompt = null;
+  if(outcome === 'accepted') {
+    showToast('App installed successfully!', 'success');
+    document.getElementById('installPWABtn').classList.remove('show');
+  }
+}
+
+// DATA
 const ADMIN = { username:"admin@eegai", password:"Admin@123", role:"admin", name:"System Admin" };
 
 let users = [
-  { id:1, username:"demo@employee", password:"123", role:"employee", name:"Demo Employee", email:"demo@email.com", phone:"9876543210" },
-  { id:2, username:"demo@employer", password:"123", role:"employer", companyName:"Demo Company", email:"company@email.com", phone:"9876543211", credits:10 }
+  { id:1, username:"ravi@emp", password:"123", role:"employee", name:"Ravi Kumar", email:"ravi@email.com", phone:"9876543210" },
+  { id:2, username:"abc@employer", password:"123", role:"employer", companyName:"ABC Technologies", email:"abc@company.com", phone:"9876543212", credits:10 }
 ];
 
 let jobs = [
-  { id:1, title:"Software Developer", company:"Tech Corp", location:"Chennai", salary:"₹5-8 LPA", description:"Looking for experienced developer", status:"active", postedBy:2, postedDate:"2025-02-10" },
-  { id:2, title:"Marketing Manager", company:"Brand Inc", location:"Coimbatore", salary:"₹6-10 LPA", description:"Manage marketing campaigns", status:"active", postedBy:2, postedDate:"2025-02-11" },
-  { id:3, title:"Data Analyst", company:"Data Solutions", location:"Madurai", salary:"₹4-7 LPA", description:"Analyze business data", status:"active", postedBy:2, postedDate:"2025-02-12" },
-  { id:4, title:"UI/UX Designer", company:"Creative Studio", location:"Chennai", salary:"₹5-9 LPA", description:"Design user interfaces", status:"active", postedBy:2, postedDate:"2025-02-13" }
+  { id:1, title:"Software Developer", company:"ABC Technologies", location:"Chennai", salary:"₹5-8 LPA", description:"Looking for experienced developer", status:"active", postedBy:2 },
+  { id:2, title:"Marketing Manager", company:"Brand Inc", location:"Coimbatore", salary:"₹6-10 LPA", description:"Manage marketing campaigns", status:"active", postedBy:2 }
 ];
 
-let drafts = [];
-let applications = [];
 const session = { user:null };
 
-// Pagination state
-let currentPage = 1;
-const itemsPerPage = 10;
-let currentJobView = 'all'; // 'all', 'search', 'filtered'
-
-// PWA variables
-let deferredPrompt;
-
-// EmailJS configuration
-const EMAILJS_CONFIG = {
-  serviceId: 'YOUR_SERVICE_ID',
-  templateId: 'YOUR_TEMPLATE_ID',
-  publicKey: 'YOUR_PUBLIC_KEY'
-};
-
-/* ==================== INITIALIZATION ==================== */
-document.addEventListener('DOMContentLoaded', () => {
-  loadFromLocalStorage();
-  initializeEmailJS();
-  registerServiceWorker();
-  setupPWAInstallPrompt();
-  
-  // Auto-login for demo
-  if(!session.user) {
-    setTimeout(() => {
-      document.getElementById('loginUser').value = 'demo@employee';
-      document.getElementById('loginPass').value = '123';
-    }, 500);
-  }
-});
-
-/* ==================== LOCAL STORAGE ==================== */
-function saveToLocalStorage() {
-  try {
-    localStorage.setItem('eegai_users', JSON.stringify(users));
-    localStorage.setItem('eegai_jobs', JSON.stringify(jobs));
-    localStorage.setItem('eegai_applications', JSON.stringify(applications));
-    localStorage.setItem('eegai_drafts', JSON.stringify(drafts));
-  } catch(e) {
-    console.error('Error saving to localStorage:', e);
-  }
-}
-
-function loadFromLocalStorage() {
-  try {
-    const savedUsers = localStorage.getItem('eegai_users');
-    const savedJobs = localStorage.getItem('eegai_jobs');
-    const savedApps = localStorage.getItem('eegai_applications');
-    const savedDrafts = localStorage.getItem('eegai_drafts');
-    
-    if(savedUsers) users = JSON.parse(savedUsers);
-    if(savedJobs) jobs = JSON.parse(savedJobs);
-    if(savedApps) applications = JSON.parse(savedApps);
-    if(savedDrafts) drafts = JSON.parse(savedDrafts);
-  } catch(e) {
-    console.error('Error loading from localStorage:', e);
-  }
-}
-
-/* ==================== LOADING SPINNER ==================== */
-function showLoading(message = 'Loading...') {
-  document.getElementById('spinnerText').textContent = message;
-  document.getElementById('loadingSpinner').classList.add('show');
-}
-
-function hideLoading() {
-  document.getElementById('loadingSpinner').classList.remove('show');
-}
-
-/* ==================== AUTHENTICATION ==================== */
+// AUTHENTICATION
 function selectRole(role) {
   document.querySelectorAll('.role-btn').forEach(btn => btn.classList.remove('active'));
   event.target.classList.add('active');
 }
 
-function showRegister() {
-  document.getElementById('loginView').classList.add('hidden');
-  document.getElementById('registerView').classList.remove('hidden');
-}
-
-function showLogin() {
-  document.getElementById('registerView').classList.add('hidden');
-  document.getElementById('loginView').classList.remove('hidden');
-}
-
-async function login() {
+function login() {
   const u = document.getElementById('loginUser').value.trim();
   const p = document.getElementById('loginPass').value.trim();
-
-  showLoading('Signing in...');
-
-  // Simulate API delay
-  await new Promise(resolve => setTimeout(resolve, 1000));
 
   if (u === ADMIN.username && p === ADMIN.password) {
     session.user = ADMIN;
     showToast('Welcome back, Administrator!', 'success');
     showView('adminView');
     initAdminDashboard();
-  } else {
-    const user = users.find(x => x.username === u && x.password === p);
-    if (!user) {
-      hideLoading();
-      showToast('Invalid credentials. Please try again.', 'error');
-      return;
-    }
-
-    session.user = user;
-    
-    // Send welcome email
-    sendWelcomeEmail(user);
-    
-    showToast(`Welcome, ${user.name || user.companyName}!`, 'success');
-
-    if (user.role === "employee") {
-      showView('employeeView');
-      initEmployeeDashboard();
-    } else {
-      document.getElementById('employerName').textContent = user.companyName;
-      showView('employerView');
-      initEmployerDashboard();
-    }
+    return;
   }
 
-  hideLoading();
+  const user = users.find(x => x.username === u && x.password === p);
+  if (!user) {
+    showToast('Invalid credentials', 'error');
+    return;
+  }
+
+  session.user = user;
+  showToast(`Welcome, ${user.name || user.companyName}!`, 'success');
+
+  if (user.role === "employee") {
+    showView('employeeView');
+    renderJobListings();
+  } else {
+    document.getElementById('employerName').textContent = user.companyName;
+    showView('employerView');
+    renderEmployerJobs();
+  }
 }
 
 function logout() {
   session.user = null;
   showView('loginView');
-  document.getElementById('loginUser').value = '';
-  document.getElementById('loginPass').value = '';
   showToast('Logged out successfully', 'success');
 }
 
 function showView(viewId) {
-  ['loginView','registerView','adminView','employeeView','employerView'].forEach(id => {
+  ['loginView','employeeView','employerView','adminView'].forEach(id => {
     document.getElementById(id).classList.add('hidden');
   });
   document.getElementById(viewId).classList.remove('hidden');
@@ -993,7 +908,7 @@ function showView(viewId) {
   const logoutBtn = document.getElementById('logoutBtn');
   const userDisplay = document.getElementById('userDisplay');
   
-  if(viewId === 'loginView' || viewId === 'registerView') {
+  if(viewId === 'loginView') {
     logoutBtn.classList.add('hidden');
     userDisplay.classList.add('hidden');
   } else {
@@ -1003,32 +918,15 @@ function showView(viewId) {
   }
 }
 
-/* ==================== EMPLOYEE FUNCTIONS ==================== */
-function initEmployeeDashboard() {
-  currentPage = 1;
-  renderJobsWithPagination();
-}
-
-function renderJobsWithPagination() {
-  const activeJobs = jobs.filter(j => j.status === 'active');
-  const totalPages = Math.ceil(activeJobs.length / itemsPerPage);
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const pageJobs = activeJobs.slice(startIndex, endIndex);
-  
+// EMPLOYEE FUNCTIONS
+function renderJobListings() {
   const container = document.getElementById('jobListings');
+  const activeJobs = jobs.filter(j => j.status === 'active');
   
-  if(pageJobs.length === 0) {
-    container.innerHTML = '<p class="muted">No jobs available</p>';
-    return;
-  }
-  
-  container.innerHTML = pageJobs.map(job => `
+  container.innerHTML = activeJobs.map(job => `
     <div class="job-card" onclick="showJobDetails(${job.id})">
       <div class="company">
-        <div class="avatar avatar-small" style="background:linear-gradient(135deg,var(--accent),var(--danger))">
-          ${job.company.charAt(0)}
-        </div>
+        <div class="avatar avatar-small">${job.company.charAt(0)}</div>
         <div>
           <div class="font-semibold">${job.company}</div>
           <div class="text-sm muted">${job.location}</div>
@@ -1039,75 +937,19 @@ function renderJobsWithPagination() {
         <span>📍 ${job.location}</span>
         <span>💰 ${job.salary}</span>
       </div>
-      <p class="text-sm muted" style="margin:12px 0">${job.description.substring(0, 100)}...</p>
-      <div style="display:flex;gap:12px;margin-top:12px">
-        <button onclick="event.stopPropagation();showJobDetails(${job.id})" style="flex:1">View Details</button>
-        <button onclick="event.stopPropagation();quickApply(${job.id})" class="success">Quick Apply</button>
-      </div>
+      <p class="text-sm muted" style="margin:12px 0">${job.description}</p>
+      <button onclick="event.stopPropagation();applyJob(${job.id})" style="width:100%">Apply Now</button>
     </div>
   `).join('');
-  
-  renderPagination(totalPages);
 }
 
-function renderPagination(totalPages) {
-  const container = document.getElementById('jobPagination');
-  
-  if(totalPages <= 1) {
-    container.innerHTML = '';
-    return;
-  }
-  
-  let html = '';
-  
-  // Previous button
-  html += `<button onclick="changePage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>←</button>`;
-  
-  // Page numbers
-  for(let i = 1; i <= totalPages; i++) {
-    if(i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
-      html += `<button onclick="changePage(${i})" class="${i === currentPage ? 'active' : ''}">${i}</button>`;
-    } else if(i === currentPage - 3 || i === currentPage + 3) {
-      html += `<span class="page-info">...</span>`;
-    }
-  }
-  
-  // Next button
-  html += `<button onclick="changePage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>→</button>`;
-  
-  // Page info
-  html += `<span class="page-info">Page ${currentPage} of ${totalPages}</span>`;
-  
-  container.innerHTML = html;
-}
-
-function changePage(page) {
-  const totalPages = Math.ceil(jobs.filter(j => j.status === 'active').length / itemsPerPage);
-  
-  if(page < 1 || page > totalPages) return;
-  
-  currentPage = page;
-  renderJobsWithPagination();
-  
-  // Scroll to top
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function searchJobsWithPagination() {
+function searchJobs() {
   const search = document.getElementById('jobSearch').value.toLowerCase();
-  
-  if(!search) {
-    currentPage = 1;
-    renderJobsWithPagination();
-    return;
-  }
-  
   const filtered = jobs.filter(j => {
     return j.status === 'active' && (
       j.title.toLowerCase().includes(search) ||
       j.company.toLowerCase().includes(search) ||
-      j.location.toLowerCase().includes(search) ||
-      j.description.toLowerCase().includes(search)
+      j.location.toLowerCase().includes(search)
     );
   });
   
@@ -1115,9 +957,7 @@ function searchJobsWithPagination() {
   container.innerHTML = filtered.map(job => `
     <div class="job-card" onclick="showJobDetails(${job.id})">
       <div class="company">
-        <div class="avatar avatar-small" style="background:linear-gradient(135deg,var(--accent),var(--danger))">
-          ${job.company.charAt(0)}
-        </div>
+        <div class="avatar avatar-small">${job.company.charAt(0)}</div>
         <div>
           <div class="font-semibold">${job.company}</div>
           <div class="text-sm muted">${job.location}</div>
@@ -1128,15 +968,10 @@ function searchJobsWithPagination() {
         <span>📍 ${job.location}</span>
         <span>💰 ${job.salary}</span>
       </div>
-      <p class="text-sm muted" style="margin:12px 0">${job.description.substring(0, 100)}...</p>
-      <div style="display:flex;gap:12px;margin-top:12px">
-        <button onclick="event.stopPropagation();showJobDetails(${job.id})" style="flex:1">View Details</button>
-        <button onclick="event.stopPropagation();quickApply(${job.id})" class="success">Quick Apply</button>
-      </div>
+      <p class="text-sm muted" style="margin:12px 0">${job.description}</p>
+      <button onclick="event.stopPropagation();applyJob(${job.id})" style="width:100%">Apply Now</button>
     </div>
   `).join('');
-  
-  document.getElementById('jobPagination').innerHTML = '';
 }
 
 function showJobDetails(jobId) {
@@ -1145,36 +980,16 @@ function showJobDetails(jobId) {
   
   document.getElementById('detailJobTitle').textContent = job.title;
   document.getElementById('jobDetailsContent').innerHTML = `
-    <div style="margin-bottom:20px">
-      <div class="flex items-center gap-4 mb-4">
-        <div class="avatar">${job.company.charAt(0)}</div>
-        <div>
-          <h3>${job.company}</h3>
-          <p class="muted">${job.location}</p>
-        </div>
-      </div>
-      
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0">
-        <div style="background:#f8fafc;padding:16px;border-radius:12px">
-          <div class="muted text-sm">💰 Salary</div>
-          <div class="font-semibold">${job.salary}</div>
-        </div>
-        <div style="background:#f8fafc;padding:16px;border-radius:12px">
-          <div class="muted text-sm">📍 Location</div>
-          <div class="font-semibold">${job.location}</div>
-        </div>
-      </div>
-      
-      <div style="margin:20px 0">
-        <h4>Job Description</h4>
-        <p style="color:var(--muted);margin-top:8px">${job.description}</p>
-      </div>
-      
-      <div style="margin:20px 0">
-        <h4>Posted Date</h4>
-        <p style="color:var(--muted);margin-top:8px">${formatDate(job.postedDate)}</p>
-      </div>
+    <h3>${job.company}</h3>
+    <p class="muted mb-4">${job.location}</p>
+    
+    <div style="background:#f8fafc;padding:16px;border-radius:12px;margin:16px 0">
+      <p><strong>💰 Salary:</strong> ${job.salary}</p>
+      <p style="margin-top:8px"><strong>📍 Location:</strong> ${job.location}</p>
     </div>
+    
+    <h4>Job Description</h4>
+    <p style="color:var(--muted);margin-top:8px">${job.description}</p>
   `;
   
   document.getElementById('jobDetailsModal').dataset.jobId = jobId;
@@ -1185,51 +1000,16 @@ function closeJobDetailsModal() {
   document.getElementById('jobDetailsModal').classList.remove('active');
 }
 
-async function quickApply(jobId) {
-  if(!session.user) {
-    showToast('Please login first', 'error');
-    return;
-  }
-  
-  showLoading('Submitting application...');
-  
-  // Simulate API delay
-  await new Promise(resolve => setTimeout(resolve, 1500));
-  
-  const job = jobs.find(j => j.id === jobId);
-  
-  applications.push({
-    id: applications.length + 1,
-    jobId: jobId,
-    userId: session.user.id,
-    appliedDate: new Date().toISOString(),
-    status: 'applied'
-  });
-  
-  saveToLocalStorage();
-  
-  // Send application confirmation email
-  sendApplicationEmail(session.user, job);
-  
-  hideLoading();
+function applyJob(jobIdParam) {
+  const jobId = jobIdParam || parseInt(document.getElementById('jobDetailsModal').dataset.jobId);
   showToast('Application submitted successfully!', 'success');
-}
-
-function applyJob() {
-  const jobId = parseInt(document.getElementById('jobDetailsModal').dataset.jobId);
-  quickApply(jobId);
   closeJobDetailsModal();
 }
 
-/* ==================== EMPLOYER FUNCTIONS ==================== */
-function initEmployerDashboard() {
-  renderEmployerJobs();
-  updateDraftCount();
-}
-
+// EMPLOYER FUNCTIONS
 function renderEmployerJobs() {
-  const myJobs = jobs.filter(j => j.postedBy === session.user.id);
   const container = document.getElementById('employerJobsList');
+  const myJobs = jobs.filter(j => j.postedBy === session.user.id);
   
   if(myJobs.length === 0) {
     container.innerHTML = '<p class="muted">No jobs posted yet. Click "Post New Job" to get started!</p>';
@@ -1238,318 +1018,56 @@ function renderEmployerJobs() {
   
   container.innerHTML = myJobs.map(job => `
     <div class="job-card" style="margin-bottom:16px">
-      <div class="flex justify-between items-start mb-4">
-        <div>
-          <h4>${job.title}</h4>
-          <p class="muted">${job.location} • ${job.salary}</p>
-        </div>
-        <span class="badge ${job.status === 'active' ? 'badge-success' : 'badge-warning'}">${job.status}</span>
-      </div>
-      <p class="text-sm muted mb-4">${job.description.substring(0, 150)}...</p>
-      <div class="flex gap-2">
-        <button onclick="viewJobApplications(${job.id})" class="secondary">View Applications</button>
-        <button onclick="editJob(${job.id})" class="ghost">Edit</button>
-        <button onclick="deleteJob(${job.id})" class="danger">Delete</button>
-      </div>
+      <h4>${job.title}</h4>
+      <p class="muted">${job.location} • ${job.salary}</p>
+      <p class="text-sm muted" style="margin:12px 0">${job.description}</p>
+      <span class="badge badge-${job.status === 'active' ? 'success' : 'warning'}">${job.status}</span>
     </div>
   `).join('');
 }
 
 function openPostJobModal() {
+  if(session.user.credits <= 0) {
+    showToast('Insufficient credits! Please contact support.', 'error');
+    return;
+  }
   document.getElementById('postJobModal').classList.add('active');
 }
 
 function closePostJobModal() {
   document.getElementById('postJobModal').classList.remove('active');
-  document.getElementById('postJobForm').reset();
 }
 
-async function submitJob(e) {
+function submitJob(e) {
   e.preventDefault();
-  
-  showLoading('Posting job...');
-  
-  // Simulate API delay
-  await new Promise(resolve => setTimeout(resolve, 1500));
   
   const newJob = {
     id: jobs.length + 1,
     title: document.getElementById('jobTitle').value,
-    company: document.getElementById('jobCompany').value,
+    company: session.user.companyName,
     description: document.getElementById('jobDescription').value,
     location: document.getElementById('jobLocation').value,
     salary: document.getElementById('jobSalary').value,
     status: 'active',
-    postedBy: session.user.id,
-    postedDate: new Date().toISOString().split('T')[0]
+    postedBy: session.user.id
   };
   
   jobs.push(newJob);
+  session.user.credits--;
+  
   saveToLocalStorage();
-  
-  // Send job posted confirmation email
-  sendJobPostedEmail(session.user, newJob);
-  
-  hideLoading();
   closePostJobModal();
   showToast('Job posted successfully!', 'success');
   renderEmployerJobs();
 }
 
-/* ==================== DRAFT FUNCTIONS ==================== */
-function saveDraft() {
-  const draft = {
-    id: Date.now(),
-    title: document.getElementById('jobTitle').value,
-    company: document.getElementById('jobCompany').value,
-    description: document.getElementById('jobDescription').value,
-    location: document.getElementById('jobLocation').value,
-    salary: document.getElementById('jobSalary').value,
-    savedDate: new Date().toISOString(),
-    userId: session.user.id
-  };
-  
-  drafts.push(draft);
-  saveToLocalStorage();
-  updateDraftCount();
-  
-  closePostJobModal();
-  showToast('Draft saved successfully!', 'success');
-}
-
-function loadDrafts() {
-  const userDrafts = drafts.filter(d => d.userId === session.user.id);
-  const container = document.getElementById('draftsList');
-  
-  if(userDrafts.length === 0) {
-    container.innerHTML = '<p class="muted">No drafts saved</p>';
-  } else {
-    container.innerHTML = userDrafts.map(draft => `
-      <div class="job-card" style="margin-bottom:16px;border-left:4px solid var(--warning)">
-        <div class="flex justify-between items-start mb-2">
-          <h4>${draft.title || 'Untitled Draft'}</h4>
-          <span class="draft-badge">📝 Draft</span>
-        </div>
-        <p class="text-sm muted mb-2">${draft.description?.substring(0, 100) || 'No description'}...</p>
-        <p class="text-sm muted mb-3">Saved: ${formatDate(draft.savedDate)}</p>
-        <div class="flex gap-2">
-          <button onclick="loadDraft(${draft.id})" class="secondary">Continue Editing</button>
-          <button onclick="deleteDraft(${draft.id})" class="danger">Delete</button>
-        </div>
-      </div>
-    `).join('');
-  }
-  
-  document.getElementById('draftsModal').classList.add('active');
-}
-
-function closeDraftsModal() {
-  document.getElementById('draftsModal').classList.remove('active');
-}
-
-function loadDraft(draftId) {
-  const draft = drafts.find(d => d.id === draftId);
-  if(!draft) return;
-  
-  document.getElementById('jobTitle').value = draft.title || '';
-  document.getElementById('jobCompany').value = draft.company || '';
-  document.getElementById('jobDescription').value = draft.description || '';
-  document.getElementById('jobLocation').value = draft.location || '';
-  document.getElementById('jobSalary').value = draft.salary || '';
-  
-  closeDraftsModal();
-  openPostJobModal();
-}
-
-function deleteDraft(draftId) {
-  if(confirm('Delete this draft?')) {
-    drafts = drafts.filter(d => d.id !== draftId);
-    saveToLocalStorage();
-    updateDraftCount();
-    loadDrafts();
-    showToast('Draft deleted', 'success');
-  }
-}
-
-function updateDraftCount() {
-  const userDrafts = drafts.filter(d => d.userId === session.user?.id);
-  const countEl = document.getElementById('draftCount');
-  if(countEl) countEl.textContent = userDrafts.length;
-}
-
-/* ==================== ADMIN FUNCTIONS ==================== */
+// ADMIN FUNCTIONS
 function initAdminDashboard() {
   document.getElementById('totalUsers').textContent = users.length;
   document.getElementById('totalJobs').textContent = jobs.length;
 }
 
-/* ==================== SOCIAL SHARING ==================== */
-function shareOnSocial(platform) {
-  const jobId = parseInt(document.getElementById('jobDetailsModal').dataset.jobId);
-  const job = jobs.find(j => j.id === jobId);
-  if(!job) return;
-  
-  const url = window.location.href;
-  const title = `${job.title} at ${job.company}`;
-  const description = job.description.substring(0, 200);
-  
-  let shareUrl = '';
-  
-  switch(platform) {
-    case 'facebook':
-      shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-      break;
-    case 'twitter':
-      shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`;
-      break;
-    case 'linkedin':
-      shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
-      break;
-    case 'telegram':
-      shareUrl = `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`;
-      break;
-  }
-  
-  if(shareUrl) {
-    window.open(shareUrl, '_blank', 'width=600,height=400');
-    showToast('Opening share dialog...', 'success');
-  }
-}
-
-function copyJobLink() {
-  const url = window.location.href;
-  
-  if(navigator.clipboard) {
-    navigator.clipboard.writeText(url).then(() => {
-      showToast('Link copied to clipboard!', 'success');
-    });
-  } else {
-    // Fallback for older browsers
-    const input = document.createElement('input');
-    input.value = url;
-    document.body.appendChild(input);
-    input.select();
-    document.execCommand('copy');
-    document.body.removeChild(input);
-    showToast('Link copied to clipboard!', 'success');
-  }
-}
-
-/* ==================== EMAIL NOTIFICATIONS (EmailJS) ==================== */
-function initializeEmailJS() {
-  // Initialize EmailJS with your public key
-  // emailjs.init(EMAILJS_CONFIG.publicKey);
-  console.log('EmailJS initialized (demo mode)');
-}
-
-async function sendWelcomeEmail(user) {
-  // In production, use actual EmailJS
-  console.log('Sending welcome email to:', user.email);
-  
-  /* Production code:
-  try {
-    await emailjs.send(
-      EMAILJS_CONFIG.serviceId,
-      EMAILJS_CONFIG.templateId,
-      {
-        to_email: user.email,
-        to_name: user.name || user.companyName,
-        subject: 'Welcome to EEGAI Jobs!',
-        message: 'Thank you for joining EEGAI Jobs. Start exploring opportunities now!'
-      }
-    );
-  } catch(error) {
-    console.error('Email error:', error);
-  }
-  */
-}
-
-async function sendApplicationEmail(user, job) {
-  console.log('Sending application confirmation to:', user.email);
-  
-  /* Production code:
-  await emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, {
-    to_email: user.email,
-    to_name: user.name,
-    subject: 'Application Submitted',
-    message: `Your application for ${job.title} at ${job.company} has been submitted successfully.`
-  });
-  */
-}
-
-async function sendJobPostedEmail(user, job) {
-  console.log('Sending job posted confirmation to:', user.email);
-  
-  /* Production code:
-  await emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, {
-    to_email: user.email,
-    to_name: user.companyName,
-    subject: 'Job Posted Successfully',
-    message: `Your job posting "${job.title}" is now live on EEGAI Jobs.`
-  });
-  */
-}
-
-/* ==================== PWA FUNCTIONS ==================== */
-function registerServiceWorker() {
-  if('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js')
-      .then(reg => console.log('Service Worker registered:', reg))
-      .catch(err => console.error('Service Worker registration failed:', err));
-  }
-}
-
-function setupPWAInstallPrompt() {
-  window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-    
-    // Show install button
-    document.getElementById('installPWABtn').classList.add('show');
-    
-    // Show bottom prompt after 5 seconds
-    setTimeout(() => {
-      document.getElementById('pwaPrompt').classList.add('show');
-    }, 5000);
-  });
-  
-  window.addEventListener('appinstalled', () => {
-    console.log('PWA installed');
-    deferredPrompt = null;
-    document.getElementById('installPWABtn').classList.remove('show');
-    document.getElementById('pwaPrompt').classList.remove('show');
-    showToast('App installed successfully!', 'success');
-  });
-}
-
-async function installPWA() {
-  if(!deferredPrompt) {
-    showToast('App is already installed or not available', 'error');
-    return;
-  }
-  
-  deferredPrompt.prompt();
-  const { outcome } = await deferredPrompt.userChoice;
-  
-  if(outcome === 'accepted') {
-    console.log('User accepted install');
-  }
-  
-  deferredPrompt = null;
-  document.getElementById('pwaPrompt').classList.remove('show');
-}
-
-function closePWAPrompt() {
-  document.getElementById('pwaPrompt').classList.remove('show');
-  localStorage.setItem('pwa_prompt_dismissed', 'true');
-}
-
-/* ==================== UTILITIES ==================== */
-function formatDate(dateStr) {
-  const date = new Date(dateStr);
-  return date.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
-}
-
+// UTILITIES
 function showToast(message, type='success') {
   const toast = document.getElementById('toast');
   const icon = document.getElementById('toastIcon');
@@ -1569,23 +1087,35 @@ function closeModal(event) {
   }
 }
 
-// Placeholder functions
-function viewJobApplications(jobId) {
-  showToast('View applications feature coming soon!', 'success');
-}
-
-function editJob(jobId) {
-  showToast('Edit job feature coming soon!', 'success');
-}
-
-function deleteJob(jobId) {
-  if(confirm('Delete this job posting?')) {
-    jobs = jobs.filter(j => j.id !== jobId);
-    saveToLocalStorage();
-    renderEmployerJobs();
-    showToast('Job deleted successfully', 'success');
+// LOCAL STORAGE
+function saveToLocalStorage() {
+  try {
+    localStorage.setItem('eegai_users', JSON.stringify(users));
+    localStorage.setItem('eegai_jobs', JSON.stringify(jobs));
+  } catch(e) {
+    console.error('Error saving to localStorage:', e);
   }
 }
+
+function loadFromLocalStorage() {
+  try {
+    const savedUsers = localStorage.getItem('eegai_users');
+    const savedJobs = localStorage.getItem('eegai_jobs');
+    
+    if(savedUsers) users = JSON.parse(savedUsers);
+    if(savedJobs) jobs = JSON.parse(savedJobs);
+  } catch(e) {
+    console.error('Error loading from localStorage:', e);
+  }
+}
+
+// INITIALIZATION
+document.addEventListener('DOMContentLoaded', () => {
+  loadFromLocalStorage();
+  document.getElementById('loginPass').addEventListener('keypress', (e) => {
+    if(e.key === 'Enter') login();
+  });
+});
 </script>
 
 </body>
